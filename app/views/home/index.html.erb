@@ -1,2 +1,11 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>TracksOnRails Home</h1>
+
+<p>
+  <% if logged_in? %>
+    You are logged in.
+    <%= link_to "Log out", logout_path %>
+  <% else %>
+    You are not logged in.
+    <%= link_to "Log in", login_path %>
+  <% end %>
+</p>
