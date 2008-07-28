@@ -15,4 +15,11 @@ describe Client do
   it "should create a new instance given valid attributes" do
     Client.create!(@valid_attributes)
   end
+  
+  it "should create a root project for a new client" do
+    client = Client.create!(@valid_attributes)
+    client.root_project.should_not be_nil
+    client.root_project.name.should == "Root Project"
+  end  
+  
 end
