@@ -57,6 +57,4 @@ class User < ActiveRecord::Base
 
   protected
     
-
-
 end

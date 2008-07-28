@@ -11,7 +11,7 @@ describe "/clients/index.html.erb" do
         :address_1 => "value for address_1",
         :address_2 => "value for address_2",
         :city => "value for city",
-        :state => "value for state",
+        :state => "value for state"
       ),
       stub_model(Client,
         :name => "value for name",
@@ -19,7 +19,7 @@ describe "/clients/index.html.erb" do
         :address_1 => "value for address_1",
         :address_2 => "value for address_2",
         :city => "value for city",
-        :state => "value for state",
+        :state => "value for state"
       )
     ]
   end

@@ -8,7 +8,6 @@
     <th>Address 2</th>
     <th>City</th>
     <th>State</th>
-    <th>Default project</th>
   </tr>
 
 <% for client in @clients %>
@@ -19,7 +18,6 @@
     <td><%=h client.address_2 %></td>
     <td><%=h client.city %></td>
     <td><%=h client.state %></td>
-    <td><%=h client.default_project_id %></td>
     <td><%= link_to 'Show', client %></td>
     <td><%= link_to 'Edit', edit_client_path(client) %></td>
     <td><%= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete %></td>

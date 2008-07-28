@@ -7,7 +7,6 @@ class CreateClients < ActiveRecord::Migration
       t.string :address_2
       t.string :city
       t.string :state
-      t.integer :default_project_id
 
       t.timestamps
     end

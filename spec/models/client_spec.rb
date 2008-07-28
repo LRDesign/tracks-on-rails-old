@@ -8,8 +8,7 @@ describe Client do
       :address_1 => "value for address_1",
       :address_2 => "value for address_2",
       :city => "value for city",
-      :state => "value for state",
-      :default_project_id => "1"
+      :state => "value for state"
     }
   end
 
