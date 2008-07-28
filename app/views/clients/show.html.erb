@@ -1,0 +1,38 @@
+<p>
+  <b>Name:</b>
+  <%=h @client.name %>
+</p>
+
+<p>
+  <b>Billing email:</b>
+  <%=h @client.billing_email %>
+</p>
+
+<p>
+  <b>Address 1:</b>
+  <%=h @client.address_1 %>
+</p>
+
+<p>
+  <b>Address 2:</b>
+  <%=h @client.address_2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @client.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @client.state %>
+</p>
+
+<p>
+  <b>Default project:</b>
+  <%=h @client.default_project_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>
