@@ -1,0 +1,10 @@
+  <div id="user_ident">    
+   <% if logged_in? %>
+       <%= current_username %>  
+      <%= link_to '(Log Out)', :controller=>'site', :action=>'logout' -%>
+   <% else %>
+      <span class="linktool">
+        <%= link_to '(Log In)', :controller=>'site', :action=>'login' -%>
+      </span>
+    <% end %>
+  </div>

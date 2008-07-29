@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+  	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	  <title><%= @title? @title: "Tracks On Rails" %></title>    
+	  <%= stylesheet_link_tag 'application', :media=>'all' %>
+	  <%= stylesheet_link_tag 'screen', :media=>'all' %>
+	  <%= stylesheet_link_tag 'print', :media=>'print' %>
+	  <%= yield :header %>
+	  <%= javascript_include_tag :defaults %> 
+
+	  <% # calendar_date_select_includes "blue" %>   
+
+  </head>
+  <body>
+	<div id="dark_layer" class="darklayer" style="display: none;">&nbsp;</div>
+	<div id="statusbar">
+	  <span style='float: right;'><b>Code Revision </b><%=  %> </span>
+	  <b>Tracks On Rails</b>  
+	  &nbsp;&#8212;&nbsp;
+	  <b>Environment:</b> <%= ENV['RAILS_ENV'].titleize %>
+	</div>
+	<%  # render :partial=>'layouts/nav' %>
+	<% flash.each do |key, msg| %>
+	     <%= content_tag :div, msg, :class => "flash #{key}" %>
+	<% end %>
+
+	<div id="main">
+	  <% # render :partial => 'layouts/title_block' %>
+	  <%= yield  %>
+	</div>
+	<%  #render :partial => 'layouts/debug' %>	
+	<span class="/foo"></span>
+  </body>
+</html>

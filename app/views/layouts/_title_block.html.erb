@@ -1,0 +1,13 @@
+<% if ((yield :title) || (yield :subtitle) || (yield :toolbar)) %>
+  <div class="page_block" id="title_section">
+  <%= content_tag(:h1, 
+            (yield :title), :id => "content_title") if yield :title %>
+  <%= content_tag(:h2, 
+            (yield :subtitle), :id => "content_subtitle") if yield :subtitle %>
+  <% if yield :toolbar %>
+      <% content_tag(:div, :id => "toolbar", :class => "clearfix") do %>
+         <%= yield :toolbar %> 
+      <% end %>  
+  <% end %>
+  </div>
+<% end %>  

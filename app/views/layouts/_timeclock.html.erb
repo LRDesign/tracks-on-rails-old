@@ -1,0 +1,33 @@
+<% if clocked_in? %>
+
+  <div id="timeclock">
+    <%= link_widget :user_hub, :clock_out, nil, 'large', 
+            :style=>"float: right;" %>
+
+     <%= link_to truncate(current_task.name), 
+           {:controller => :task, :action => :show, :id => current_task.id },
+         {:class => 'nobr'} %>
+    <br />
+  
+    <div id="timecounter">&nbsp;</div>
+  
+    <script type="text/javascript">
+    
+      //SYNTAX: myvariable=new dcountup(past_date_and_time_string, "baseunit")
+      var timeclock=
+      new dcountup("<%= current_user.work_unit.start_time.to_s(:long) %>",
+        "hours");
+    
+      timeclock.oncountup=function(result){
+        // Result is an object containing the current count up date/time, 
+        // updated every second by the javascript (in application.js)
+        // Available properties: result["days"], result["hours"], 
+        // result["minutes"], and result["seconds"]
+        var mycountainer=document.getElementById("timecounter");
+        mycountainer.innerHTML=result['hours']
+        +":"+result['minutes']+":"+result['seconds'];
+      }
+    
+    </script>  
+  </div>
+<% end %>
