@@ -22,7 +22,8 @@
 	  &nbsp;&#8212;&nbsp;
 	  <b>Environment:</b> <%= ENV['RAILS_ENV'].titleize %>
 	</div>
-	<%  # render :partial=>'layouts/nav' %>
+	<%= render :partial=>'layouts/nav' %>
+	
 	<% flash.each do |key, msg| %>
 	     <%= content_tag :div, msg, :class => "flash #{key}" %>
 	<% end %>
@@ -31,7 +32,7 @@
 	  <% # render :partial => 'layouts/title_block' %>
 	  <%= yield  %>
 	</div>
-	<%  #render :partial => 'layouts/debug' %>	
+	<%= render :partial => 'layouts/debug' %>	
 	<span class="/foo"></span>
   </body>
 </html>

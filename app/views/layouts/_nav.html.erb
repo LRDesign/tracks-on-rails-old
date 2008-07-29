@@ -1,7 +1,7 @@
-<div id="nav">
+<div id="nav" class="clearfix">
   <% #= render :partial => 'layouts/timeclock' %>     
   <% #= render :partial => 'layouts/user_ident'%>
-  <%= link_to "Home", {:controller=>"site", :action=>"index"}, :class=>'navlink' %>
+  <%= link_to "Home", root_path, :class=>'navlink' %>
   <%= link_to "Clients", clients_path, :class=>'navlink' %>
   <%= link_to "Projects", projects_path, :class=>'navlink' %>
   <%= link_to "Users", users_path, :class=>'navlink' %>

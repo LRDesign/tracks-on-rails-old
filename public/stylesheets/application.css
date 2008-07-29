@@ -1,0 +1,71 @@
+root { 
+    display: block;
+}
+body, html {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+body, p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size:   12px;
+}
+
+/*---------------- NAV BAR -------------------*/
+#nav {
+	padding: 0 .25em;
+	background-color: #116;
+}
+#nav a {
+	display: block;
+	float: left;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	width: 6em;
+	font-weight: bold;
+	padding: .25em 1em;
+}
+#nav a:hover {
+	background-color: #669;
+} 
+
+
+/*---------------- FLASH NOTICE STYLES -------------------*/
+div.flash{
+    margin: 0;
+    padding: 3px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    border: 1px dotted red;
+}
+div.notice {
+    background: #9e9;    
+}
+div.alert {
+    background: #ee6;
+}
+div.error {
+    background: #e99;
+}
+
+
+/*---------------- STATUS BAR ------------------------------------*/
+#statusbar {
+    font-size: 9px;
+    color: #aaa;
+    font-family: Courier, sans-serif;
+    background: #333;  
+    padding: 0 5px;
+}
+
+
+/*---------------- UTILITIES ------------------------------------*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
