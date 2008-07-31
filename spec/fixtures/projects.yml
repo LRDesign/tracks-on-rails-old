@@ -1,15 +1,44 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  parent_id: 1
-  client_id: 1
-  name: MyString
-  account: MyString
-  description: MyText
+client_one_root_proj:
+  parent: 
+  client: client_one
+  name: ClientOne
+  account: 10000
+  description: Client One's Root Project
 
-two:
-  parent_id: 1
-  client_id: 1
-  name: MyString
-  account: MyString
-  description: MyText
+client_one_proj_A:
+    parent: client_one_root_proj
+    client: client_one
+    name: ClientOne
+    account: 10000
+    description: Client One Project A
+
+client_one_proj_AA:
+    parent: client_one_proj_A
+    client: client_one
+    name: ClientOne
+    account: 10000
+    description: Client One SubProject AA
+
+client_one_proj_AB:
+    parent: client_one_proj_A
+    client: client_one
+    name: ClientOne
+    account: 10000
+    description: Client One SubProject AB
+
+client_one_proj_B:
+    parent: client_one_root_proj
+    client: client_one
+    name: ClientOne
+    account: 10000
+    description: Client One Project B
+    
+
+client_two_root_proj:
+  parent: 
+  client: client_two
+  name: ClientTwo
+  account: 
+  description: 

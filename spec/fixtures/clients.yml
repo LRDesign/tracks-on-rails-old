@@ -1,19 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  billing_email: MyString
-  address_1: MyString
-  address_2: MyString
-  city: MyString
-  state: MyString
-  default_project_id: 1
+client_one:
+  name: ClientOne
+  billing_email: cl.one.cfo@clientOne.com
+  address_1: 100 foo st.
+  address_2: 
+  city: Annapolis
+  state: MD
 
-two:
-  name: MyString
-  billing_email: MyString
-  address_1: MyString
-  address_2: MyString
-  city: MyString
-  state: MyString
-  default_project_id: 1
+client_two:
+  name: ClientTwo
+  billing_email: moneyGuy@clientTwo.com
+  address_1: 2024 Midlothian Dr.
+  address_2: Suite 100
+  city: Boston
+  state: MA

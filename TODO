@@ -1,5 +1,17 @@
-1) Root project for client should have the same name as the client
-2) Root project can't be deleted (without deleting the client)
-3) Make list-style tables for clients and for projects
-4) Make tree-style listing for projects
+#* Root project for client should have the same name as the client
+
+#* Subprojects need client_id set
+* projects can't be created without a client or a parent
+* Deleting a client should delete all projects
+* Root project can't be deleted (without deleting the client)
+* Make list-style tables for clients and for projects
+* Make tree-style listing for projects
+* Make tree-style selector for parent project
+* Add zip code for client
+* Nest REST pages 
+
+
+* add admin ability to create new users
+
+
 

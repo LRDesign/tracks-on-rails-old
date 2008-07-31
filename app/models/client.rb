@@ -10,7 +10,7 @@ class Client < ActiveRecord::Base
   
   protected
   def create_root_project
-    self.projects << Project.new(:name => "Root Project")
+    self.projects << Project.new(:name => self.name)
   end
     
 end
