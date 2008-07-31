@@ -27,18 +27,16 @@ describe "/clients/index.html.erb" do
 
   it "should render list of clients" do
     response.should have_tag("tr>td", "value for name", 2)
-    response.should have_tag("tr>td", "value for billing_email", 2)
-    response.should have_tag("tr>td", "value for address_1", 2)
-    response.should have_tag("tr>td", "value for address_2", 2)
-    response.should have_tag("tr>td", "value for city", 2)
-    response.should have_tag("tr>td", "value for state", 2)
   end
-  
-  
+    
   it "should have list table" do
-    pending
-    response.should have_tag("table.listing")
-  end
+     response.should have_tag("table.listing")
+   end
+
+   it "should have even and odd rows" do
+     response.should have_tag("tr.odd", 1)
+     response.should have_tag("tr.even", 1)
+   end
   
 end
 
