@@ -11,8 +11,19 @@ describe Project do
     it "should require either parent or client" do
       attr = valid_attributes.merge({:client => nil, :parent => nil})
       Project.new(attr).should_not be_valid
+    end    
+  end
+  
+  describe "root projects" do
+    it "should be root" do
+      projects(:client_one_root_proj).should be_root
     end
-    
+  end
+  
+  describe "subprojects" do
+    it "should not be root" do
+      projects(:client_one_proj_A).should_not be_root
+    end
   end
   
   describe "being created" do

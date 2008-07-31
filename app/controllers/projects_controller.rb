@@ -75,7 +75,11 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1.xml
   def destroy
     @project = Project.find(params[:id])
-    @project.destroy
+    unless @project.root?
+      @project.destroy
+    else      
+      flash[:error] = "You cannot delete a client's root project!  Delete the client instead."
+    end
 
     respond_to do |format|
       format.html { redirect_to(projects_url) }

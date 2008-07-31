@@ -159,16 +159,21 @@ describe ProjectsController do
 
     it "should destroy the requested project" do
       Project.should_receive(:find).with("37").and_return(mock_project)
+      mock_project.should_receive(:root?).and_return(false)      
       mock_project.should_receive(:destroy)
       delete :destroy, :id => "37"
     end
   
     it "should not destroy a root project" do
-      projects
+      Project.should_receive(:find).with("37").and_return(mock_project)
+      mock_project.should_receive(:root?).and_return(true)
+      mock_project.should_not_receive(:destroy)
+      delete :destroy, :id => "37"
     end  
   
     it "should redirect to the projects list" do
       Project.stub!(:find).and_return(mock_project(:destroy => true))
+      mock_project.stub!(:root?).and_return(false)
       delete :destroy, :id => "1"
       response.should redirect_to(projects_url)
     end
