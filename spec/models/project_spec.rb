@@ -3,6 +3,18 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Project do
   fixtures :projects, :clients
 
+  describe "validation" do
+    it "should be valid" do
+      Project.new(valid_attributes).should be_valid
+    end
+    
+    it "should require either parent or client" do
+      attr = valid_attributes.merge({:client => nil, :parent => nil})
+      Project.new(attr).should_not be_valid
+    end
+    
+  end
+  
   describe "being created" do
 
     it "should create a new instance given valid attributes" do
@@ -34,26 +46,26 @@ describe Project do
         proj.destroy
       end.should change(proj.children, :count).to(0)      
     end
-    
-    it "should not destroy a root project" do
-      pending
-    end
-    
+
   end
 
-protected
-def create_project(options = {})
-  client = clients(:client_one)
-  parent = client.root_project
-  record = Project.new({ 
-    :parent => parent,
-    :client => client,
-    :name => "FooBar Project",
-    :account => "10A3B",
-    :description => "Lorem Ipsum dolor sit amet"
-    }.merge(options))
+  protected
+  def create_project(options = {})
+    record = Project.new(valid_attributes.merge(options))
     record.save
     record
+  end
+  
+  def valid_attributes
+    client = clients(:client_one)
+    parent = client.root_project
+    @valid_attributes ={ 
+      :parent => parent,
+      :client => client,
+      :name => "FooBar Project",
+      :account => "10A3B",
+      :description => "Lorem Ipsum dolor sit amet"
+    }
   end
 
 end

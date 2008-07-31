@@ -1,7 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe ProjectsController do
-
+  fixtures :projects
+  
   def mock_project(stubs={})
     @mock_project ||= mock_model(Project, stubs)
   end
@@ -162,12 +163,15 @@ describe ProjectsController do
       delete :destroy, :id => "37"
     end
   
+    it "should not destroy a root project" do
+      projects
+    end  
+  
     it "should redirect to the projects list" do
       Project.stub!(:find).and_return(mock_project(:destroy => true))
       delete :destroy, :id => "1"
       response.should redirect_to(projects_url)
     end
-
   end
 
 end
