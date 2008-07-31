@@ -1,32 +1,7 @@
 <h1>New client</h1>
 
 <% form_for(@client) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :billing_email %><br />
-    <%= f.text_field :billing_email %>
-  </p>
-  <p>
-    <%= f.label :address_1 %><br />
-    <%= f.text_field :address_1 %>
-  </p>
-  <p>
-    <%= f.label :address_2 %><br />
-    <%= f.text_field :address_2 %>
-  </p>
-  <p>
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </p>
-  <p>
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </p>
+	<%= render :partial => "form", :locals => {:f => f} %>
   <p>
     <%= f.submit "Create" %>
   </p>

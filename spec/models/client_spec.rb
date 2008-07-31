@@ -12,7 +12,7 @@ describe Client do
         :address_2 => "value for address_2",
         :city => "value for city",
         :state => "value for state",
-        :postal => 91001
+        :postal => "91001"
       }
     end
 
