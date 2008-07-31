@@ -22,10 +22,10 @@ describe "/clients/index.html.erb" do
         :state => "value for state"
       )
     ]
+    render "/clients/index.html.erb"
   end
 
   it "should render list of clients" do
-    render "/clients/index.html.erb"
     response.should have_tag("tr>td", "value for name", 2)
     response.should have_tag("tr>td", "value for billing_email", 2)
     response.should have_tag("tr>td", "value for address_1", 2)
@@ -33,5 +33,12 @@ describe "/clients/index.html.erb" do
     response.should have_tag("tr>td", "value for city", 2)
     response.should have_tag("tr>td", "value for state", 2)
   end
+  
+  
+  it "should have list table" do
+    pending
+    response.should have_tag("table.listing")
+  end
+  
 end
 

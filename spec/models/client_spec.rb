@@ -22,4 +22,6 @@ describe Client do
     client.root_project.name.should == client.name
   end  
   
+  it "should have zipcode field"
+  
 end

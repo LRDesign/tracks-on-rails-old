@@ -1,20 +1,15 @@
 <h1>Listing projects</h1>
 
-<table border=1>
+<table class="listing">
   <tr>
-    <th>Parent</th>
-    <th>Client</th>
     <th>Name</th>
-    <th>Account</th>
     <th>Description</th>
+	<th>&nbsp;</th>
   </tr>
 
 <% for project in @projects %>
-  <tr>
-    <td><%=h project.parent_id %></td>
-    <td><%=h project.client_id %></td>
+  <tr class=<%= cycle('odd','even')%>>
     <td><%=h project.name %></td>
-    <td><%=h project.account %></td>
     <td><%=h project.description %></td>
     <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
