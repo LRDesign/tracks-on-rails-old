@@ -10,6 +10,9 @@ body, p, ol, ul, td {
     font-family: verdana, arial, helvetica, sans-serif;
     font-size:   12px;
 }
+#main {
+	padding: 1em;
+}
 
 /*---------------- NAV BAR -------------------*/
 #nav {
@@ -105,4 +108,21 @@ tr.even {
     height: 0;
     clear: both;
     visibility: hidden;
+}
+
+
+/*------------ DEBUG STYLES -------------------*/
+#debug {
+    border-top: 2px dotted gray;
+    /*background: #dde;*/
+    padding: 1.5em;
+}
+/* Debug Style */
+.debug_dump {
+    text-align: left;
+    border-top: 1px dashed black;
+    background: #fff;
+    margin: 0;
+    padding: 0.5em;
+    display: block;
 }

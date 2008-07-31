@@ -1,5 +1,5 @@
 class Client < ActiveRecord::Base
-  has_many :projects 
+  has_many :projects, :dependent => :destroy 
   
   before_create :create_root_project
     

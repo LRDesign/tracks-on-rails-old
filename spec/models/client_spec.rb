@@ -1,7 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Client do
-
+  fixtures :clients
+  
   describe "creating" do
     before(:each) do
       @valid_attributes = {
@@ -26,7 +27,12 @@ describe Client do
   end
 
   describe "destroying" do 
-    it "should delete all projects"
+    it "should delete all projects" do
+      client = clients(:client_one)
+      lambda do 
+        client.destroy
+      end.should change(client.projects, :count).to(0)
+    end
   end
   
   it "should have zipcode field"
