@@ -16,6 +16,14 @@ describe Project do
       proj.client.should_not be_nil
       proj.client.should == clients(:client_two)
     end  
+    
+    it "should require either a client or a parent" do
+      lambda do
+        proj = create_project(:client => nil, :parent => nil)
+        proj.errors.on(:parent).should_not be_nil
+      end.should_not change(Project, :count)
+    end
+    
   end 
 
 
