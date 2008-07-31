@@ -1,7 +1,7 @@
 #* Root project for client should have the same name as the client
 
 #* Subprojects need client_id set
-* projects can't be created without a client or a parent
+#* projects can't be created without a client or a parent
 * Deleting a client should delete all projects
 * Root project can't be deleted (without deleting the client)
 * Make list-style tables for clients and for projects
