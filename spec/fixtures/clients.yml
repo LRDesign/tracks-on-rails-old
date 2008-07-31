@@ -7,6 +7,7 @@ client_one:
   address_2: 
   city: Annapolis
   state: MD
+  postal: 05321
 
 client_two:
   name: ClientTwo
@@ -15,3 +16,4 @@ client_two:
   address_2: Suite 100
   city: Boston
   state: MA
+  postal: 00123

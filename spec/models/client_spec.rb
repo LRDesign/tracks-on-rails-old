@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Client do
-  fixtures :clients
+  fixtures :clients, :projects
   
   describe "creating" do
     before(:each) do
@@ -11,7 +11,8 @@ describe Client do
         :address_1 => "value for address_1",
         :address_2 => "value for address_2",
         :city => "value for city",
-        :state => "value for state"
+        :state => "value for state",
+        :postal => 91001
       }
     end
 
@@ -35,6 +36,4 @@ describe Client do
     end
   end
   
-  it "should have zipcode field"
-
 end
