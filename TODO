@@ -1,0 +1,5 @@
+1) Root project for client should have the same name as the client
+2) Root project can't be deleted (without deleting the client)
+3) Make list-style tables for clients and for projects
+4) Make tree-style listing for projects
+
