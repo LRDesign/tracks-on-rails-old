@@ -5,11 +5,7 @@
 
   <p>
     <%= f.label :parent_id %><br />
-    <%= f.text_field :parent_id %>
-  </p>
-  <p>
-    <%= f.label :client_id %><br />
-    <%= f.text_field :client_id %>
+    <%= f.select(:parent_id, Project.find(:all).collect  {|p| [p.name, p.id]}, { :include_blank => "" }) %>
   </p>
   <p>
     <%= f.label :name %><br />
