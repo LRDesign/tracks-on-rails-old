@@ -32,7 +32,7 @@ describe Project do
       lambda do
         create_project
       end.should change(Project, :count).by(1)
-    end
+    end 
 
     it "should get the parent project's client automatically" do
       proj = create_project(:client => nil, :parent => clients(:client_two).root_project)

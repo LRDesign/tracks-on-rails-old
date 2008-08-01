@@ -1,7 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :projects
 
-  map.resources :clients
+  map.resources :clients do |clients|
+    clients.resources :projects
+  end    
+  map.resources :projects
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
