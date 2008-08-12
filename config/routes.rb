@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :clients do |clients|
-    clients.resources :projects
+    clients.resources :projects, :name_prefix => "client_"
   end    
   map.resources :projects
 

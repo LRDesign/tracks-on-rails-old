@@ -7,6 +7,10 @@ describe ProjectsController do
     @mock_project ||= mock_model(Project, stubs)
   end
   
+  def mock_client(stubs={})
+    @mock_client ||= mock_model(Client, stubs)
+  end
+  
   describe "responding to GET index" do
 
     it "should expose all projects as @projects" do
@@ -14,6 +18,14 @@ describe ProjectsController do
       get :index
       assigns[:projects].should == [mock_project]
     end
+    
+    it "should expose client as @client when called in a nested fashion" do
+      Client.should_receive(:find_by_id).with("5").and_return([mock_client])
+      mock_client.should_receive(:projects).and_return(projects = mock("Array of Projects"))
+      get :index, :client_id => 5
+      assigns[:client].should == mock_client
+    end
+    
 
     describe "with mime type of xml" do
   

@@ -1,8 +1,16 @@
 class ProjectsController < ApplicationController
+  
+  before_filter :load_client
+  
   # GET /projects
   # GET /projects.xml
-  def index
-    @projects = Project.find(:all)
+  def index    
+    if (@client)
+      puts @client.to_yaml
+      @projects = @client.projects
+    else
+      @projects = Project.find(:all)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -86,4 +94,9 @@ class ProjectsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private 
+  def load_client
+    @client = Client.find_by_id(params[:client_id]) if params[:client_id]
+  end  
 end
