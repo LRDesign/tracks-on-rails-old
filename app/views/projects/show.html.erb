@@ -1,11 +1,11 @@
-<p>
+<p>	
   <b>Parent:</b>
-  <%=h @project.parent_id %>
+  <%=h @project.parent.name if @project.parent %>
 </p>
 
 <p>
   <b>Client:</b>
-  <%=h @project.client_id %>
+  <%=h @project.client.name %>
 </p>
 
 <p>

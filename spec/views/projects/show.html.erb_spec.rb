@@ -7,7 +7,8 @@ describe "/projects/show.html.erb" do
     assigns[:project] = @project = stub_model(Project,
       :name => "value for name",
       :account => "value for account",
-      :description => "value for description"
+      :description => "value for description",
+      :client => stub_model(Client, :name => "I'm a client")
     )
   end
 

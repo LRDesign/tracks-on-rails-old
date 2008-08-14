@@ -5,10 +5,13 @@ describe ProjectsController do
   
   def mock_project(stubs={})
     @mock_project ||= mock_model(Project, stubs)
+    @mock_project.stub!(:client).and_return(@mock_client)
+    @mock_project
   end
   
   def mock_client(stubs={})
     @mock_client ||= mock_model(Client, stubs)
+    @mock_client
   end
   
   describe "responding to GET index" do
@@ -20,7 +23,8 @@ describe ProjectsController do
     end
     
     it "should expose client as @client when called in a nested fashion" do
-      Client.should_receive(:find_by_id).with("5").and_return([mock_client])
+      Client.should_receive(:find_by_id).with("5").and_return(mock_client)
+      #mock_client.stub!(:projects).and_return(mock("Array of Projects"))
       mock_client.should_receive(:projects).and_return(projects = mock("Array of Projects"))
       get :index, :client_id => 5
       assigns[:client].should == mock_client

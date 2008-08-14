@@ -6,7 +6,6 @@ class ProjectsController < ApplicationController
   # GET /projects.xml
   def index    
     if (@client)
-      puts @client.to_yaml
       @projects = @client.projects
     else
       @projects = Project.find(:all)
