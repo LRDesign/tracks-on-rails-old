@@ -180,6 +180,7 @@ describe ClientsController do
   describe "when not logged in" do
     it "should redirect GET index to login urs" do
       get :index
+      flash[:error].should == "Please log in first."
       response.should redirect_to(login_url)
     end
   end

@@ -55,6 +55,10 @@ class User < ActiveRecord::Base
     u && u.authenticated?(password) ? u : nil
   end
 
+  def admin?
+    admin
+  end
+
   protected
     
 end

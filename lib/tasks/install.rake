@@ -8,10 +8,21 @@ task :install => :environment do |t|
 end
 
 def create_admin_user
-  password = "foobar"
+  password = "foobar"      
   admin = User.create!(:login => "admin",
     :email => "admin@example.com",
     :password => password, 
     :password_confirmation => password,
+    :admin => true,
     :name => "Admin User")
+end
+
+def create_plain_user
+  password = "foobar"
+  User.create!(:login => "john",
+    :email => "john@example.com",
+    :password => password,
+    :password_confirmation => password,
+    :admin => false,
+    :name => "John Doe")
 end

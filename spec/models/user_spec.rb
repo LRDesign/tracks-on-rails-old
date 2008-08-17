@@ -40,6 +40,7 @@ describe User do
       end
     end
   end
+
   describe 'disallows illegitimate logins:' do
     ['12', '1234567890_234567890_234567890_234567890_', "tab\t", "newline\n",
      "Iñtërnâtiônàlizætiøn hasn't happened to ruby 1.8 yet", 
@@ -88,6 +89,7 @@ describe User do
       end
     end
   end
+
   describe 'disallows illegitimate emails' do
     ['!!@nobadchars.com', 'foo@no-rep-dots..com', 'foo@badtld.xxx', 'foo@toolongtld.abcdefg',
      'Iñtërnâtiônàlizætiøn@hasnt.happened.to.email', 'need.domain.and.tld@de', "tab\t", "newline\n",
@@ -116,6 +118,7 @@ describe User do
       end
     end
   end
+
   describe "disallows illegitimate names" do
     ["tab\t", "newline\n",
      '1234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890_',
@@ -213,6 +216,14 @@ describe User do
     users(:quentin).remember_token_expires_at.should_not be_nil
     users(:quentin).remember_token_expires_at.between?(before, after).should be_true
   end
+
+  it "recognizes administrators" do
+    users(:aaron).should be_admin
+  end
+  
+  it "recognizes plain users" do
+    users(:quentin).should_not be_admin  
+  end  
 
 protected
   def create_user(options = {})
