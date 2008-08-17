@@ -2,15 +2,18 @@
 
 <table class="listing">
   <tr>
-    <th>Name</th>
+    <th></th>
+	<th></th>
+	<th>Name</th>
 	<th colspan="3">&nbsp;</th>
   </tr>
 
 <% for client in @clients %>
   <tr class=<%= cycle('odd','even')%>>
-    <td><%=h client.name %></td>
     <td><%= link_to 'Show', client %></td>
     <td><%= link_to 'Edit', edit_client_path(client) %></td>
+    <td><%=h client.name %></td>
+    <td><%= link_to 'Projects', client_projects_path(client) %></td>
     <td><%= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

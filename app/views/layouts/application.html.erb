@@ -29,10 +29,9 @@
 	<% end %>
 
 	<div id="main">
-	  <% # render :partial => 'layouts/title_block' %>
+	  <%= render :partial => 'layouts/title_block' %>
 	  <%= yield  %>
 	</div>
 	<%= render :partial => 'layouts/debug' %>	
-	<span class="/foo"></span>
   </body>
 </html>

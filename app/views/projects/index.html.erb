@@ -1,6 +1,5 @@
-<h1>Listing projects</h1>
+<% set_title("Listing Projects") %>
 
 <%= render :partial => 'projects/list', :locals => { :projects => @projects }  %>
-<br />
 
 <%= link_to 'New project', new_project_path %>

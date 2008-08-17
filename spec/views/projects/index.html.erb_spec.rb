@@ -7,8 +7,7 @@ describe "/projects/index.html.erb" do
     assigns[:projects] = [ stub_project, stub_project ]
     render "/projects/index.html.erb"
   end
-
-
+  
   it "should render list of projects" do
     response.should have_tag("tr>td", "value for name", 2)
     response.should have_tag("tr>td", "value for description", 2)
