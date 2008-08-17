@@ -31,13 +31,5 @@ describe "application layout" do
        response.body.should match(/XHTML 1.0 Transitional/)
      end
   end
-
-  describe "title section" do  
-    it "should render a title when requested" do
-      pending
-      self.should_receive(:yield).with(:title).and_return("This is my Title")
-      render "/layouts/application.html.erb"    
-    end
-  end
   
 end
