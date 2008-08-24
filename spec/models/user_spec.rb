@@ -218,7 +218,7 @@ describe User do
   end
 
   it "recognizes administrators" do
-    users(:aaron).should be_admin
+    users(:aaron_admin).should be_admin
   end
   
   it "recognizes plain users" do

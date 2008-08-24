@@ -21,4 +21,16 @@ class ApplicationController < ActionController::Base
       redirect_to login_url      
     end    
   end
+  
+  def require_admin
+    if !admin_logged_in?
+      flash[:error] = "You are not authorized to use this function."
+      redirect_to :back
+    end
+  end
+  
+  def admin_logged_in?
+    current_user.admin?
+  end
+  
 end
