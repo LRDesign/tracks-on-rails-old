@@ -1,10 +1,29 @@
 class UsersController < ApplicationController
   
+  before_filter :require_login
+  before_filter :require_admin, :except => [ :edit ]
+  
+  # GET /users
+  # GET /users.xml
+  def index    
+    @users = User.find(:all)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @projects }
+    end
+  end
+  
   # render new.rhtml
   def new
     @user = User.new
   end
- 
+  
+  # GET /users/1/edit
+  def edit
+    @user = User.find(params[:id])
+  end
+  
   def create
     logout_keeping_session!
     @user = User.new(params[:user])

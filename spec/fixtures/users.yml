@@ -10,7 +10,7 @@ quentin:
   remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb
   admin:                     false
       
-aaron:
+aaron_admin:
   id:                        2
   login:                     aaron
   email:                     aaron@example.com
