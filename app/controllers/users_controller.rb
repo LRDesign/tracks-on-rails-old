@@ -22,6 +22,10 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    unless admin_logged_in? or (current_user == @user)
+      flash[:error] = "You are not authorized to edit this user"
+      redirect_to :back
+    end
   end
   
   def create

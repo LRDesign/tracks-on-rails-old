@@ -1,14 +1,10 @@
 require File.dirname(__FILE__) + '/../spec_helper'
-  
-# Be sure to include AuthenticatedTestHelper in spec/spec_helper.rb instead
-# Then, you can remove it from this and the units test.
-include AuthenticatedTestHelper
 
 describe UsersController do
   fixtures :users
   
   before(:each) do
-    request.env["HTTP_REFERER"] = "/prev/page" 
+    request.env["HTTP_REFERER"] = '/prev/page' 
   end
   
   describe "account creation" do
@@ -87,7 +83,7 @@ describe UsersController do
       it "forbids index" do
         get :index
         flash[:error].should_not be_nil
-        response.should be_redirect_to(:back)
+        response.should redirect_to('/prev/page')
       end
 
       it "allows edit self" do
@@ -98,7 +94,7 @@ describe UsersController do
       it "forbid edit others" do
         get :edit, :id => users(:aaron_admin)
         flash[:error].should_not be_nil
-        response.should be_redirect_to(:back)
+        response.should redirect_to('/prev/page')
       end
     end
 
